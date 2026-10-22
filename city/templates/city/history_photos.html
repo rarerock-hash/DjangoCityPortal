@@ -1,0 +1,84 @@
+
+{% extends 'city/base.html' %}
+
+{% block title %}Фотоархів — Київ{% endblock %}
+
+{% block content %}
+
+<section class="hero">
+    <p>КИЇВ У ФОТОГРАФІЯХ</p>
+    <h1>Фотоархів міста</h1>
+    <p>
+        Архітектура, історичні пам’ятки та краєвиди
+        столиці України.
+    </p>
+</section>
+
+<h2>Визначні місця Києва</h2>
+
+<div class="cards">
+
+    <div class="card">
+        <img
+            src="https://commons.wikimedia.org/wiki/Special:FilePath/Kyiv%20-%20Saint%20Sophia%20cathedral.jpg"
+            alt="Софійський собор у Києві"
+            style="width: 100%; height: 230px; object-fit: cover; border-radius: 8px;"
+        >
+        <h2>Софійський собор</h2>
+        <p>
+            Одна з найважливіших історичних пам’яток
+            Києва, заснована в XI столітті.
+        </p>
+        <p>
+            <a href="https://commons.wikimedia.org/wiki/File:Kyiv_-_Saint_Sophia_cathedral.jpg"
+               target="_blank">
+                Джерело фотографії
+            </a>
+        </p>
+    </div>
+
+    <div class="card">
+        <img
+            src="https://commons.wikimedia.org/wiki/Special:FilePath/Golden%20Gate%2C%20Kyiv.jpg"
+            alt="Золоті ворота в Києві"
+            style="width: 100%; height: 230px; object-fit: cover; border-radius: 8px;"
+        >
+        <h2>Золоті ворота</h2>
+        <p>
+            Відома пам’ятка оборонної архітектури,
+            пов’язана з історією Київської Русі.
+        </p>
+        <p>
+            <a href="https://commons.wikimedia.org/wiki/File:Golden_Gate,_Kyiv.jpg"
+               target="_blank">
+                Джерело фотографії
+            </a>
+        </p>
+    </div>
+
+    <div class="card">
+        <img
+            src="https://commons.wikimedia.org/wiki/Special:FilePath/Dniepr%20river%20in%20Kyiv.jpg"
+            alt="Річка Дніпро в Києві"
+            style="width: 100%; height: 230px; object-fit: cover; border-radius: 8px;"
+        >
+        <h2>Дніпро</h2>
+        <p>
+            Річка, яка відіграє важливу роль
+            в історії та житті столиці.
+        </p>
+        <p>
+            <a href="https://commons.wikimedia.org/wiki/File:Dniepr_river_in_Kyiv.jpg"
+               target="_blank">
+                Джерело фотографії
+            </a>
+        </p>
+    </div>
+
+</div>
+
+<div style="margin-top: 30px;">
+    <a href="{% url 'history' %}">← Повернутися до історії Києва</a>
+</div>
+
+{% endblock %}

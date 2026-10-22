@@ -1,0 +1,193 @@
+
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Київ — міський портал{% endblock %}</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f6f8;
+            color: #252a34;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #ffffff;
+            border-bottom: 1px solid #e3e6eb;
+            padding: 22px 7%;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            color: #243b64;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: #d8a62e;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+            margin-top: 16px;
+        }
+
+        nav a {
+            color: #454d5b;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #b58a20;
+        }
+
+        main {
+            max-width: 1100px;
+            margin: 45px auto;
+            padding: 0 24px;
+            min-height: 55vh;
+        }
+
+        .hero {
+            background: #243b64;
+            color: white;
+            padding: 55px 40px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+        }
+
+        .hero p {
+            max-width: 650px;
+            color: #e2e7f0;
+        }
+
+        h1 {
+            font-size: 36px;
+            line-height: 1.2;
+        }
+
+        h2 {
+            color: #243b64;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 18px;
+        }
+
+        .card {
+            display: block;
+            background: white;
+            border: 1px solid #e3e6eb;
+            border-radius: 10px;
+            padding: 24px;
+            text-decoration: none;
+            color: #252a34;
+        }
+
+        .card:hover {
+            border-color: #d8a62e;
+            transform: translateY(-2px);
+        }
+
+        .card h2 {
+            margin-top: 0;
+        }
+
+        .content {
+            background: white;
+            border: 1px solid #e3e6eb;
+            border-radius: 10px;
+            padding: 30px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            color: #777f8c;
+            font-size: 13px;
+            border-top: 1px solid #e3e6eb;
+            background: white;
+        }
+
+
+@media (max-width: 600px) {
+    header {
+        padding: 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    main {
+        margin: 25px auto;
+        padding: 0 16px;
+    }
+
+    .hero {
+        padding: 30px 22px;
+    }
+
+    h1 {
+        font-size: 29px;
+    }
+
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    nav a {
+        font-size: 14px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+    </style>
+</head>
+<body>
+
+
+
+<header>
+    <a class="logo" href="{% url 'home' %}">KYIV<span>.</span></a>
+
+    <nav>
+        <a href="{% url 'home' %}">Головна</a>
+        <a href="{% url 'news' %}">Новини</a>
+        <a href="{% url 'management' %}">Керівництво</a>
+        <a href="{% url 'facts' %}">Факти</a>
+        <a href="{% url 'contacts' %}">Контакти</a>
+        <a href="{% url 'history' %}">Історія</a>
+        <a href="{% url 'history_people' %}">Відомі мешканці</a>
+        <a href="{% url 'history_photos' %}">Фотоархів</a>
+    </nav>
+</header>
+
+<main>
+    {% block content %}
+    {% endblock %}
+</main>
+
+<footer>
+    Навчальний проєкт Django · Міський портал Києва
+</footer>
+
+</body>
+</html>
